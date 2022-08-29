@@ -36,12 +36,3 @@ def extract_transaction_log_with_date(begin,end):
         results = connection.execute(query).fetchall()
         df = pd.DataFrame(results)
         return df
-
-
-
-tl = extract_transaction_log()
-tl['year'] = pd.to_datetime(tl['order_date']).dt.year
-# customgroup = tl.groupby('markets_name').agg({'sales_amount':'sum','sales_qty':'sum'}).reset_index()
-# top5_revenue = (customgroup.sort_values(by=['sales_amount'], ascending=False)).head(5)
-# print(top5_revenue)
-print(tl['year'])
