@@ -1,0 +1,8 @@
+python3 -m venv env //Create environment python
+source env/bin/activate; //active environment ubuntu
+env\Scripts\activate.bat //active enviroment window
+deactivate; //deactivate environment
+pip3 freeze > requirements.txt; //List of plugin and write to requirements.txt
+pip3 install -r requirements.txt; //Install plugins with file requirements.txt
+prefect agent local start // add agent
+streamlit run app_streamlit.py
